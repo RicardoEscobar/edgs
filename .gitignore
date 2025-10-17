@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,python,virtualenv,venv
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,python,virtualenv,venv
+# Created by https://www.toptal.com/developers/gitignore/api/venv,linux,macos,python,windows,virtualenv,web
+# Edit at https://www.toptal.com/developers/gitignore?templates=venv,linux,macos,python,windows,virtualenv,web
 
 ### Linux ###
 *~
@@ -237,6 +237,21 @@ pip-selfcheck.json
 # Virtualenv
 # http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
 
+### Web ###
+*.asp
+*.cer
+*.csr
+*.css
+*.htm
+*.html
+*.js
+*.jsp
+*.php
+*.rss
+*.wasm
+*.wat
+*.xhtml
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -263,4 +278,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,python,virtualenv,venv
+# End of https://www.toptal.com/developers/gitignore/api/venv,linux,macos,python,windows,virtualenv,web
