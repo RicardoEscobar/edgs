@@ -210,30 +210,17 @@ def main():
                                 + __json["message"]["StarSystem"]
                             )
 
-                            # Add StarSystem to star_system_data
-                            star_system_data["StarSystem"] = __json["message"]["StarSystem"]
-
                             if "SystemAddress" in __json["message"]:
                                 echoLog(
                                     "        - System Address: "
                                     + str(__json["message"]["SystemAddress"])
                                 )
-                            
-                                # Add SystemAddress to star_system_data
-                                star_system_data["SystemAddress"] = __json["message"]["SystemAddress"]
 
                             if "StarPos" in __json["message"]:
                                 echoLog(
                                     "        - Star Position: "
                                     + str(__json["message"]["StarPos"])
                                 )
-
-                                # Add StarPos to star_system_data
-                                star_system_data["StarPos_x"] = __json["message"]["StarPos"][0]
-                                star_system_data["StarPos_y"] = __json["message"]["StarPos"][1]
-                                star_system_data["StarPos_z"] = __json["message"]["StarPos"][2]
-
-            
 
                         elif __event == "Scan":
                             echoLog(
