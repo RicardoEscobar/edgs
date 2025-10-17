@@ -13,9 +13,8 @@ USE edgs;
 
 -- Table to store information about star systems
 CREATE TABLE IF NOT EXISTS starsystem (
-    id INT PRIMARY KEY,
+    SystemAddress BIGINT NOT NULL PRIMARY KEY,  
     StarSystem VARCHAR(255) NOT NULL,
-    SystemAddress BIGINT UNIQUE NOT NULL,
     StarPos_x FLOAT NULL,
     StarPos_y FLOAT NULL,
     StarPos_z FLOAT NULL,
