@@ -33,8 +33,8 @@ def add_data(stars_system_data: StarSystemData):
     Adds a new employee record to the database.
     """
     try:
-        statement = "INSERT INTO starsystem (id, StarSystem, address, StarPos_x, StarPos_y, StarPos_z) VALUES (%s, %s, %s, %s, %s, %s)"
-        data = (stars_system_data['id'], stars_system_data['StarSystem'], stars_system_data['address'],
+        statement = "INSERT INTO starsystem (SystemAddress, StarSystem, StarPos_x, StarPos_y, StarPos_z) VALUES (%s, %s, %s, %s, %s)"
+        data = (stars_system_data['SystemAddress'], stars_system_data['StarSystem'],
                 stars_system_data['StarPos_x'], stars_system_data['StarPos_y'], stars_system_data['StarPos_z'])
         cursor.execute(statement, data)
         connection.commit()
@@ -49,17 +49,16 @@ def get_data() -> list[StarSystemData]:
     """
     resultset = []
     try:
-        statement = "SELECT * FROM starsystem"
+        statement = "SELECT SystemAddress, StarSystem, StarPos_x, StarPos_y, StarPos_z FROM starsystem"
         cursor.execute(statement)
         results = cursor.fetchall()
         for row in results:
             system_data = StarSystemData(
-                id=row[0],
-                StarSystem=row[1],
-                address=row[2],
-                StarPos_x=row[3],
-                StarPos_y=row[4],
-                StarPos_z=row[5]
+                SystemAddress=row[0],  # SystemAddress is in column 0 
+                StarSystem=row[1],     # StarSystem is in column 1
+                StarPos_x=row[2],      # StarPos_x is in column 2
+                StarPos_y=row[3],      # StarPos_y is in column 3
+                StarPos_z=row[4]       # StarPos_z is in column 4
             )
             resultset.append(system_data)
     except database.Error as e:
@@ -70,7 +69,6 @@ def get_data() -> list[StarSystemData]:
 def main():
     # Example usage
     add_data({
-        'id': 1,
         'StarSystem': 'Chaxiraxi',
         'SystemAddress': 16063849047465,
         'StarPos_x': -9.84375,
