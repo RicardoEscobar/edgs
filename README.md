@@ -30,3 +30,42 @@ This is more like it. We can get real-time data from EDDN and update our databas
 ## Design and create a relational database schema
 
 We need to design a database schema that can store all the relevant data about systems, stations, factions, and other game-related data. We can use MariaDB for this purpose. Also using SQLite3 for local testing and sharing the database downloading it from the repo.
+
+# AI analysis
+
+Based on my analysis of all the schema README files, I can now provide you with a comprehensive breakdown of which schemas are related to systems, bodies, stations, and factions in Elite Dangerous:
+
+## EDDN Schema Classification for Elite Dangerous Game Elements
+### Systems (Star Systems)
+- journal - Covers FSDJump, Location, and CarrierJump events that contain system-level data including system names, coordinates, and faction information
+- navroute - Navigation route data between systems
+- fssdiscoveryscan - Full Spectrum System Scanner discovery scan data for systems
+- fssallbodiesfound - When all bodies in a system have been discovered via FSS
+- navbeaconscan - Navigation beacon scan data within systems
+### Bodies (Planets, Stars, etc.)
+- journal - Covers Scan events for detailed body scan data (planets, stars, moons)
+- scanbarycentre - Scans of barycentre objects (gravitational centers of binary systems)
+- fssbodysignals - Signals detected on specific bodies via Full Spectrum Scanner
+- fsssignaldiscovered - Various signals discovered via FSS, often body-related
+- codexentry - Codex discoveries often related to biological or geological features on bodies
+- approachsettlement - When approaching settlements on planetary bodies
+### Stations (Markets, Docking, Services)
+- commodity - Market data from stations including commodity prices and availability
+- outfitting - Station outfitting services and available modules
+- shipyard - Station shipyard services and available ships
+- dockinggranted - Successful docking permissions at stations
+- dockingdenied - Failed docking attempts at stations
+- fcmaterials_capi - Fleet Carrier materials data (stations are essentially mobile stations)
+- fcmaterials_journal - Fleet Carrier materials from journal events
+- blackmarket - (Deprecated) Black market data from stations
+### Factions
+- journal - The main source for faction data through FSDJump, Location, and Docked events which include faction information for systems and stations
+- codexentry - May contain faction-related discoveries
+
+### Additional Notes:
+The journal schema is the most comprehensive, covering multiple game elements including systems, bodies, stations, and factions through various journal events (Docked, FSDJump, Scan, Location, SAASignalsFound, CarrierJump)
+Many schemas require augmentation with system coordinates (StarPos) and system names (StarSystem) from location-tracking events
+The blackmarket schema is deprecated in favor of the commodity schema's prohibited array
+Several schemas are specifically for exploration data (FSS-related schemas, scan schemas) that primarily deal with systems and bodies
+Station-related schemas focus on services and market data rather than the physical characteristics of the stations themselves
+This classification helps understand which schemas provide data about the core game elements that make up the Elite Dangerous galaxy.
