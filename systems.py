@@ -224,9 +224,8 @@ def main():
 
                         elif __event == "Scan":
                             # Populate star_system_data
-                            star_system_data["id"] = __json["message"]["BodyID"]
+                            star_system_data["SystemAddress"] = __json["message"]["SystemAddress"]
                             star_system_data["StarSystem"] = __json["message"]["StarSystem"]
-                            star_system_data["address"] = __json["message"]["SystemAddress"]
                             star_system_data["StarPos_x"] = __json["message"]["StarPos"][0]
                             star_system_data["StarPos_y"] = __json["message"]["StarPos"][1]
                             star_system_data["StarPos_z"] = __json["message"]["StarPos"][2]
