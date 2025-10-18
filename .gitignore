@@ -1,5 +1,19 @@
-# Created by https://www.toptal.com/developers/gitignore/api/venv,linux,macos,python,windows,virtualenv,web
-# Edit at https://www.toptal.com/developers/gitignore?templates=venv,linux,macos,python,windows,virtualenv,web
+# Created by https://www.toptal.com/developers/gitignore/api/web,venv,linux,macos,python,windows,virtualenv,compressed
+# Edit at https://www.toptal.com/developers/gitignore?templates=web,venv,linux,macos,python,windows,virtualenv,compressed
+
+### Compressed ###
+*.7z
+*.deb
+*.gz
+*.pkg
+*.rar
+*.rpm
+*.sit
+*.sitx
+*.tar
+*.zip
+*.zipx
+*.tgz
 
 ### Linux ###
 *~
@@ -278,4 +292,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/venv,linux,macos,python,windows,virtualenv,web
+# End of https://www.toptal.com/developers/gitignore/api/web,venv,linux,macos,python,windows,virtualenv,compressed
