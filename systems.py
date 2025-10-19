@@ -25,7 +25,7 @@ import zlib
 import zmq
 import simplejson
 
-from edgs_db import add_data, get_data
+from edgs_db import add_stars_system_data, get_data
 from starsystemdata import StarSystemData
 
 """
@@ -230,7 +230,7 @@ def main():
                             star_system_data["StarPos_y"] = __json["message"]["StarPos"][1]
                             star_system_data["StarPos_z"] = __json["message"]["StarPos"][2]
                             # Add to database
-                            add_data(star_system_data)
+                            add_stars_system_data(star_system_data)
                             echoLog(
                                 "        - Body Name: " + __json["message"]["BodyName"]
                             )
